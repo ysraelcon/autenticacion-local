@@ -1,0 +1,6 @@
+practica de: https://github.com/sikandar114/node-auth-pass-local
+
+en https://www.youtube.com/watch?v=1R1lh-VLbJU&list=PLZURtcoL43SWxdWMHrL60kyoS19F_VXoc&index=2
+
+errors: 
+ https://stackoverflow.com/questions/41526065/getting-throw-er-unhandled-error-event-for-node-passport
