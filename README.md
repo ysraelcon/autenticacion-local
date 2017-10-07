@@ -1,3 +1,11 @@
+Pagina: [npss](https://npss.glitch.me/)
+================
+practica de: https://www.youtube.com/watch?v=yk6HPrn5c5E&list=PLZURtcoL43SWxdWMHrL60kyoS19F_VXoc&index=4
+------------
+notas:
+- passport local
+- node.js
+
 Welcome to the Glitch BETA
 =========================
 
