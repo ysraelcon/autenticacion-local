@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
  <title>Autenticación app</title>
+  
  <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  
 </head>
 <body>
   
@@ -22,6 +26,73 @@
   <p><a href="/">Home</a></p>
 </div>
   
+  <div id="dvcht">
+    <input type="button" id="btcht"
+ value="chat">
+    
+    <div id="dvchtu">users</div>
+    <div id="dvchtc"></div>
+    
+    <div id="dvchtmsg">
+<form id="fmsndmsg">
+
+<input type="text" id="inmsg"
+ placeholder="write your message...">
+<button type="submit">
+<span class="glyphicon glyphicon-send"></span>Send</button>
+
+</form>
+</div>
+    
+  </div>
+  
+  <!--  scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+
+jQuery(function($) {
+ var Sk=io.connect();
+      
+var $fmsndmsg = $('#fmsndmsg');
+var $inmsg = $('#inmsg');
+  
+var $dvchtc = $('#dvchtc');
+  
+var $dvchtu = $('#dvchtu');
+
+var $btcht=$("#btcht");
+ 
+$btcht.click(function(e){
+e.preventDefault();
+Sk.emit("ev1","hola");//skemt
+});
+  
+$fmsndmsg.submit(function(e) {
+  e.preventDefault();
+   if($inmsg.val()!=''){
+ Sk.emit('send message',
+  $inmsg.val());}
+
+$inmsg.val("");
+});//fm submit
+  
+Sk.on("new message",
+ function(dt){
+
+$dvchtc.append('<b>'+dt.nick+":</b> "+dt.msg+"<br>");
+})//skon new msg
+  
+Sk.on("usernames",
+ function(dt){
+var html="";
+for(var usrnm in dt){
+html+=usrnm+"<br>";
+}//for
+$dvchtu.html(html);
+})//skon usernames
+              
+})//jQuery
+  </script>            
   
 </body>
 

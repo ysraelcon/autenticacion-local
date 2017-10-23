@@ -4,3 +4,11 @@ en https://www.youtube.com/watch?v=1R1lh-VLbJU&list=PLZURtcoL43SWxdWMHrL60kyoS19
 
 errors: 
  https://stackoverflow.com/questions/41526065/getting-throw-er-unhandled-error-event-for-node-passport
+
+
+----
+socket.io passport
+ https://www.codementor.io/tips/0217388244/sharing-passport-js-sessions-with-both-express-and-socket-io
+ 
+ 
+ 
